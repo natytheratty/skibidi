@@ -1,0 +1,20 @@
+---
+config:
+  theme: redux
+---
+flowchart TD
+    A["Lost Item Assistant"] --> B["What did you lose?"]
+    B --> C["Get User Answer"]
+    C --> D{"Have you checked 
+        1. Your bag?
+        2. Your classroom
+        3. The lost and found area"}
+    D -- Yes --> E{"Ask your friends whether they have seen your item"}
+    D -- No --> F["Check these areas"]
+    E -- No --> G["Track no. of attempts"]
+    E -- Yes --> End["End"]
+    F --> D
+    G --> H{"Would you like to report this to the General Office?"}
+    H -- Yes --> I["Reporting to the General Office"]
+    H -- No --> J["Setting reminder to check again tomorrow"]
+    
